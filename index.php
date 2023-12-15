@@ -11,8 +11,8 @@
 <body class="index">
     <h1 class="header">Farm Intelligence Cloud</h1>
     <div class="path">
-        <a href="/templates/login.php" class="link"> Login </a>
-        <a href="Viewer.php" class="link">Viewer</a>
+        <a href="login.php" class="link"> Login </a>
+        <a href="viewer.php" class="link">Viewer</a>
     </div>
 </body>
 
