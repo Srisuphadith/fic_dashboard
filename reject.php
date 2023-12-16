@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    YOU DON'T HAVE ANY PERMISSION.
+    <h1 clsss="alert">YOU DON'T HAVE ANY PERMISSION.</h1>
 </body>
 </html>

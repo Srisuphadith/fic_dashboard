@@ -12,7 +12,6 @@
     <h1 class="header">Farm Intelligence Cloud</h1>
     <div class="path">
         <a href="login.php" class="link"> Login </a>
-        <a href="viewer.php" class="link">Viewer</a>
     </div>
 </body>
 

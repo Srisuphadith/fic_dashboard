@@ -140,6 +140,11 @@ div.alert {
     color: #FE6D73;
 }
 
+.alert {
+    text-align: center;
+    color: #FE6D73;
+}
+
 div.successAlt {
     text-align: center;
     color: #17C3B2;
@@ -150,19 +155,93 @@ div.successAlt {
     justify-content: space-between;
     align-items: center;
     padding: 8px 40px;
-    background-color: #E7DECD;
+    background-color: #0A122A;
     font-size: 20px;
     margin-bottom: 20px;
+    color: #FBFAF8;
+}
+
+p.userName,
+.logout {
+    color: #FBFAF8;
 }
 
 .logout:hover {
-    color: #0a122a98;
+    color: #fbfaf8b6;
 }
 
 .logout:active {
-    color: #0a122a;
+    color: #FBFAF8;
 }
 
 .navPages {
     margin: 0px;
+}
+
+.viewerFlex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.moni,
+.data,
+.noti {
+    color: #FBFAF8;
+    background-color: #804E49;
+    padding: 12px 20px;
+    margin: 0px;
+}
+
+.viewerLeft {
+    width: 70%;
+}
+
+.moniItem,
+.dataItem {
+    border: 1px solid #E7DECD;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.moniItem {
+    margin-bottom: 40px;
+}
+
+.notiItem {
+    height: 100%;
+    border: 1px solid #E7DECD;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.mornitor {
+    margin: 12px 8px;
+}
+
+.monitorLogo {
+    width: 100px;
+}
+
+img.mornitor {
+    background-color: #E7DECD;
+}
+
+.monitorButton {
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background-color: #E7DECD;
+}
+
+.monitorButton:hover {
+    background-color: #e7decd8a;
+}
+
+.monitorButton:active {
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 12px;
+    background-color: #E7DECD;
+}
+
+.MornitorItem {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
 }
