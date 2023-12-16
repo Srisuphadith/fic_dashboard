@@ -19,6 +19,9 @@ if(isset($_GET['logoutWarning'])){
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<?php require("nav.php"); ?>
+    <?php require("nav.php"); ?>
+    <h2 class="system">System Configuration​​</h2>
+    <h2 class="manage">User Management​​</h2>
+    <h2 class="trouble">Troubleshooting​​​</h2>
 </body>
 </html>

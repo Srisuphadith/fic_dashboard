@@ -19,6 +19,12 @@ if(isset($_GET['logoutWarning'])){
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<?php require("nav.php"); ?>
+    <?php require("nav.php"); ?>
+    <h2 class="manual">Manual Interventions​</h2>
+    <div class="MornitorItem">
+                <div class="mornitor"><button type="submit" name="walve" class="monitorButton"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName">Walve : Open</p></button></div>
+                <div class="mornitor"><button type="submit" name="fan" class="monitorButton"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName">Fan : Open</p></button></div>
+            </div>
+    <h2 class="feedback">Feedback Submission​</h2>
 </body>
 </html>

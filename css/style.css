@@ -185,7 +185,12 @@ p.userName,
 
 .moni,
 .data,
-.noti {
+.noti,
+.manual,
+.feedback,
+.system,
+.manage,
+.trouble {
     color: #FBFAF8;
     background-color: #804E49;
     padding: 12px 20px;
@@ -212,8 +217,16 @@ p.userName,
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.mornitor {
-    margin: 12px 8px;
+.mornitorName {
+    text-align: center;
+}
+
+div.mornitor {
+    margin: 12px 16px;
+    padding: 0px 12px;
+    border: 1px solid #E7DECD;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
+    border-radius: 12px;
 }
 
 .monitorLogo {
@@ -228,7 +241,6 @@ img.mornitor {
     padding: 12px;
     border: none;
     border-radius: 50px;
-    background-color: #E7DECD;
 }
 
 .monitorButton:hover {
@@ -244,4 +256,8 @@ img.mornitor {
     display: flex;
     align-items: center;
     padding: 4px 12px;
+}
+
+.mornitorName {
+    font-weight: 1000px;
 }
