@@ -144,3 +144,25 @@ div.successAlt {
     text-align: center;
     color: #17C3B2;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    background-color: #E7DECD;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.logout:hover {
+    color: #0a122a98;
+}
+
+.logout:active {
+    color: #0a122a;
+}
+
+.navPages {
+    margin: 0px;
+}

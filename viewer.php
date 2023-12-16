@@ -1,5 +1,13 @@
 <?php
 session_start();
+if(!isset($_SESSION['name']) or !isset($_SESSION['id']) or !isset($_SESSION['role'])){
+    session_destroy();
+    header("Location: login.php?errorMessage=CN");
+}
+if(isset($_GET['logoutWarning'])){
+    session_destroy();
+    header("Location: login.php?logoutSuccess=CN");
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +19,6 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php echo "Welcome ".$_SESSION['name']; ?>
+    <?php require("nav.php"); ?>
 </body>
 </html>

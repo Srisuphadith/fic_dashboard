@@ -10,6 +10,11 @@
 
 <body class="login">
     <?php
+    if(isset($_GET['errorMessage'])){
+        echo "<div class='alert'> Login Failed !!! </div>";
+    }elseif(isset($_GET['logoutSuccess'])){
+        echo "<div class='successAlt'> Logout Successfully </div>";
+    }
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['pass'];
@@ -22,6 +27,7 @@
                 session_start();
                 $_SESSION['id'] = $user['ID'];
                 $_SESSION['name'] = $user['fname'];
+                $_SESSION['role'] = $user['role'];
                 if($user['role'] == 'user'){
                     header("Location: user.php");
                     die();
