@@ -14,3 +14,13 @@ function openCity(evt, page){
     evt.currentTarget.className +=" active";   
 }
 document.getElementById("defaultOpen").click();
+$(document).ready(function(){
+
+    $("#b2").click(function(){
+        $.ajax({url: "user_debug.php", success: function(result){
+          $("#User").html(result);
+        }});
+      });
+
+
+  });
