@@ -1,22 +1,37 @@
 .ctn{
     width: 100%;
-    height: 500px;
+    height: 1000px;
     display: flex;
     background-color: rgb(218, 218, 218);
 }
 .side_bar{
     background-color: rgb(185, 185, 185);
     width: 20%;
-    height: 500px;
+    height: 1000px;
 }
 .content{
     background-color: rgb(218, 218, 218);
     width: 80%;
-    height: 500px;
+    height: 1000px;
     display: none;
     animation: fadeEffect 1s;
 }
-button{
+#sys{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+#sys_L{
+    /* background-color: antiquewhite; */
+    width: 50%;
+    height: 1000px;
+}
+#sys_R{
+    /* background-color: darkgreen; */
+    width: 50%;
+    height: 1000px;
+}
+.side_bar button{
     background-color: inherit;
     float: left;
     border: none;
@@ -27,11 +42,22 @@ button{
     transition: 0.3s;
     font-size: 20px;
 }
-button:hover{
+.side_bar button:hover{
     background-color: #ddd;
 }
-button.active{
+.side_bar button.active{
     background-color: #ccc;
+}
+.floor{
+    width: 100%;
+    height: 500px;
+    background-color:rgb(83, 83, 83);
+}
+.inner-floor{
+
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 @keyframes fadeEffect {
     from {opacity: 0;}
