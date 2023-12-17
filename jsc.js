@@ -13,14 +13,38 @@ function openCity(evt, page){
     document.getElementById(page).style.display = "block";
     evt.currentTarget.className +=" active";   
 }
+function phase_data(id,name,surname){
+    document.getElementById("id").value = id;
+    document.getElementById("name").value = name;
+    document.getElementById("surname").value = surname;
+}
 document.getElementById("defaultOpen").click();
 $(document).ready(function(){
-
-    $("#b2").click(function(){
-        $.ajax({url: "user_debug.php", success: function(result){
-          $("#User").html(result);
-        }});
-      });
+    window.scrollTo(0, 0);
+    // $("#butt").click(function(){
+    //     document.getElementById("id").value = document.getElementById("butt").value; 
+    // });
+    // $("#b2").click(function(){
+      
+    //     $.ajax({url: "user_query.php", success: function(result){
+    //       $("#User").html(result);
+    //     }});
+    //   });
+    $("#submit").click(function(){
+        
+        const id = document.getElementById("id").value;
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
+        const role = document.getElementById("inputState").value;
+        $.ajax({
+            type: 'POST',
+            url: 'update.php',
+            data: { id: id, name: name,surname:surname,role:role },
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    });
 
 
   });
