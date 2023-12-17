@@ -1,0 +1,39 @@
+.ctn{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background-color: rgb(218, 218, 218);
+}
+.side_bar{
+    background-color: rgb(185, 185, 185);
+    width: 20%;
+    height: 500px;
+}
+.content{
+    background-color: rgb(218, 218, 218);
+    width: 80%;
+    height: 500px;
+    display: none;
+    animation: fadeEffect 1s;
+}
+button{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+button:hover{
+    background-color: #ddd;
+}
+button.active{
+    background-color: #ccc;
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
