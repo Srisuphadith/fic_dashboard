@@ -9,7 +9,7 @@
 <body>
 <?php
 require_once("connect.php");
-$sql = "SELECT * FROM Sensor_data";
+$sql = "SELECT * FROM Sensor_data ORDER BY id DESC";
 $result = mysqli_query($conn,$sql);
 ?>
 <table class="table">
