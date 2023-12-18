@@ -66,7 +66,7 @@ $(document).ready(function () {
             url: 'parameter.php',
             data: { pump_max_temp: pump_max_temp, pump_min_temp: pump_min_temp, pump_max_humi: pump_max_humi, fan_min_temp: fan_min_temp, fan_min_humi: fan_min_humi },
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 alert("Update successfully");
                 $.ajax({
                     url: "parameter_query.php", success: function (data) {
@@ -88,7 +88,7 @@ $(document).ready(function () {
             url: 'update.php',
             data: { id: id, name: name, surname: surname, role: role },
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 $.ajax({ url: "user_query.php", success: function (data) { $("#user").html(data); } });
             }
         });
