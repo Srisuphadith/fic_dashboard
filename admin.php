@@ -86,16 +86,25 @@ require_once("connect.php");
             </div>
         </div>
         <div class="content" id="Troubleshooting​​​">
-            <div id="s_ctn">
-                <div id = "head">Device status</div>
-                <div id="content_status"></div>
-                
+            <div id = "Tbt">
+            <div style="width:50%;padding-left:20px;padding-right:20px;">
+                <div id="s_ctn">
+                    <div id = "head">Device status</div>
+                    <div id="content_status"></div>
+                    
+                </div>
+                <div id="s_ctn" style="height: fit-content;">
+                    <div id = "head">sensor data</div>
+                    <div id="content_sensor"></div>
+                </div>
+                <button id = "re_status" class="btn btn-primary" style="margin-left:20px;margin-top:20px;">Refresh</button>
             </div>
-            <div id="s_ctn" style="height: fit-content;">
-                <div id = "head">sensor data</div>
-                <div id="content_sensor" "></div>
+
+            <div style="width:50%;height:1000px;padding-right:20px;padding-left:20px;padding-top:20px;">
+                    <div style="width:100%;height:650px;background-color: rgb(118, 118, 118);"></div>
             </div>
-            <button id = "re_status" class="btn btn-primary" style="margin-left:20px;margin-top:20px;">Refresh</button>
+            </div>
+            
         </div>
 
     </div>
