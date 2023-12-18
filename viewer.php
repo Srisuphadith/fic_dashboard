@@ -30,7 +30,7 @@ if(isset($_GET['logoutWarning'])){
                     $sqlD = "SELECT `pump`, `fan`, `id` FROM `status` WHERE `id` = 1";
                     $resultD = mysqli_query($conn , $sqlD);
                     $deviceStatus = mysqli_fetch_array($resultD , MYSQLI_ASSOC);
-                    $sqlS = "SELECT `Temperature` , `Humidity` , `Soil_humidity` , `id` FROM `sensor_data` ORDER BY id DESC LIMIT 1";
+                    $sqlS = "SELECT `Temperature` , `Humidity` , `Soil_humidity` , `id` FROM `Sensor_data` ORDER BY id DESC LIMIT 1";
                     $resultS = mysqli_query($conn , $sqlS);
                     $sensor = mysqli_fetch_array($resultS,MYSQLI_ASSOC)
                     ?>
