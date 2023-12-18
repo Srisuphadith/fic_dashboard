@@ -36,6 +36,39 @@ if(isset($_GET['logoutWarning'])){
         </div>
         <div class="upperLeft">
             <h2 class="feedback">Feedback Submission​</h2>
+            <?php
+            if(isset($_GET['success']) && $_GET['success'] === 'true') {
+                echo "<div class='successAlt'> Feedback submitted successfully! </div>";}
+
+            if(isset($_POST['feedbackB'])){
+                $feedback = $_POST['feedback'];
+                $sql = "INSERT INTO feedback (`userID`, `feedback`) VALUES (?, ?)";
+                $stmt = mysqli_stmt_init($conn);
+                $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+                
+                if ($prepareStmt) {
+                    mysqli_stmt_bind_param($stmt, "is", $_SESSION['id'], $feedback);
+                    mysqli_stmt_execute($stmt);
+                    
+                    if (mysqli_stmt_affected_rows($stmt) > 0) {
+                        header("Location: user.php?success=true");
+                        exit();
+                    } else {
+                        echo "<div class='errorAlt'> Error submitting feedback! </div>";
+                    }
+                } else {
+                    die("Something went wrong.");
+                }
+                
+                mysqli_stmt_close($stmt);
+                
+            }
+            ?>
+
+            <form action="user.php" method="post" class="feedbackform">
+                <textarea name="feedback" rows="8" placeholder="Type your feedback"></textarea>
+                <div class="buttonMid"><button type="submit" name="feedbackB" class="button"> submit </button></div>
+            </form>
         </div>
     </div>
     <div class="lowerContent">

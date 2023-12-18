@@ -315,7 +315,7 @@ span.mornitorStatus {
 .upperContent {
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px 20px 20px;
+    margin: 0px 20px 40px 20px;
 }
 
 .manualButton {
@@ -352,4 +352,20 @@ span.mornitorStatus {
 
 .sensorValue {
     color: #0A122A;
+}
+
+.feedbackform {
+    padding: 12px 20px;
+}
+
+textarea {
+    width: 100%;
+    resize: both;
+    border: 1px solid rgba(149, 157, 165, 0.6);
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 6px;
+    margin: 12px 0px;
+}
+
+.buttonMid {
+    text-align: center;
 }
