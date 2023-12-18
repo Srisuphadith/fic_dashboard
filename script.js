@@ -1,4 +1,5 @@
 function openCity(evt, page){
+    console.log("hello");
     var i , tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("content");
@@ -13,23 +14,25 @@ function openCity(evt, page){
     document.getElementById(page).style.display = "block";
     evt.currentTarget.className +=" active";   
 }
+document.getElementById("defaultOpen").click();
+
 function phase_data(id,name,surname){
     document.getElementById("id").value = id;
     document.getElementById("name").value = name;
     document.getElementById("surname").value = surname;
 }
-document.getElementById("defaultOpen").click();
+
 $(document).ready(function(){
     window.scrollTo(0, 0);
-    // $("#butt").click(function(){
-    //     document.getElementById("id").value = document.getElementById("butt").value; 
-    // });
-    // $("#b2").click(function(){
-      
-    //     $.ajax({url: "user_query.php", success: function(result){
-    //       $("#User").html(result);
-    //     }});
-    //   });
+
+    $("#b2").click(function(){
+        $.ajax({url: "user_query.php",success: function( data ) {$( "#user" ).html( data );}});
+    });
+
+    $("#butt").click(function(){
+        document.getElementById("id").value = document.getElementById("butt").value; 
+    });
+
     $("#submit").click(function(){
         
         const id = document.getElementById("id").value;
@@ -42,6 +45,7 @@ $(document).ready(function(){
             data: { id: id, name: name,surname:surname,role:role },
             success: function(response) {
                 console.log(response);
+                $.ajax({url: "user_query.php",success: function( data ) {$( "#user" ).html( data );}});
             }
         });
     });
