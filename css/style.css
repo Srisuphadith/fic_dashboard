@@ -190,7 +190,8 @@ p.userName,
 .feedback,
 .system,
 .manage,
-.trouble {
+.trouble,
+.sensor {
     color: #FBFAF8;
     background-color: #804E49;
     padding: 12px 20px;
@@ -223,8 +224,8 @@ p.userName,
 
 div.mornitor {
     margin: 12px 16px;
-    padding: 0px 12px;
-    border: 1px solid #E7DECD;
+    padding: 8px 12px;
+    border: 1px solid rgba(149, 157, 165, 0.6);
     box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
     border-radius: 12px;
 }
@@ -233,31 +234,77 @@ div.mornitor {
     width: 100px;
 }
 
-img.mornitor {
-    background-color: #E7DECD;
-}
-
-.monitorButton {
-    padding: 12px;
-    border: none;
-    border-radius: 50px;
-}
-
-.monitorButton:hover {
-    background-color: #e7decd8a;
-}
-
-.monitorButton:active {
-    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 12px;
-    background-color: #E7DECD;
-}
-
 .MornitorItem {
     display: flex;
     align-items: center;
     padding: 4px 12px;
 }
 
-.mornitorName {
-    font-weight: 1000px;
+span.mornitorName {
+    font-weight: 600;
+}
+
+span.mornitorStatus {
+    font-weight: 450;
+}
+
+.manualItem {
+    display: flex;
+    padding: 12px;
+    justify-content: space-around;
+}
+
+.upperRight,
+.upperLeft {
+    width: 48%;
+    border: 1px solid #E7DECD;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.lowerContent {
+    border: 1px solid #E7DECD;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 0px 0px 20px 20px;
+}
+
+.upperContent {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+}
+
+.manualButton {
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(149, 157, 165, 0.6);
+}
+
+.manualButton:hover {
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 6px;
+}
+
+.manualButton:active {
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 12px;
+}
+
+.manualButtonOpen {
+    background-color: #E7DECD;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    border: 1px solid rgba(149, 157, 165, 0.6);
+}
+
+.close {
+    color: #FE6D73;
+}
+
+.open {
+    color: #17C3B2;
+}
+
+.sensorValue {
+    color: #0A122A;
 }

@@ -20,11 +20,22 @@ if(isset($_GET['logoutWarning'])){
 </head>
 <body>
     <?php require("nav.php"); ?>
-    <h2 class="manual">Manual Interventions​</h2>
-    <div class="MornitorItem">
-                <div class="mornitor"><button type="submit" name="walve" class="monitorButton"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName">Walve : Open</p></button></div>
-                <div class="mornitor"><button type="submit" name="fan" class="monitorButton"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName">Fan : Open</p></button></div>
+    <div class="upperContent">    
+        <div class="upperRight">
+            <h2 class="manual">Manual Interventions​</h2>        
+            <div class="manualItem">
+                    <div class="manualInter"><button type="submit" name="walve" class="manualButton"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName">Walve : Open</p></button></div>
+                    <div class="manualInter"><button type="submit" name="fan" class="manualButton"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName">Fan : Open</p></button></div>
             </div>
-    <h2 class="feedback">Feedback Submission​</h2>
+        </div>
+        <div class="upperLeft">
+            <h2 class="feedback">Feedback Submission​</h2>
+        </div>
+    </div>
+    <div class="lowerContent">
+        <h2 class="sensor">Measurement Value</h2>
+        <div class="sensorItem"></div>
+    </div>
+
 </body>
 </html>

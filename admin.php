@@ -48,11 +48,11 @@ require_once("connect.php");
             <div id="sys">
                 <div id="sys_L">
                     <div id ="temp_conf">
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%"></div>
                         <button class = "btn btn-primary" style="width:100%;margin-top:20px;" id = "update_parameter">update</button>
                     </div>
                 </div>
