@@ -23,12 +23,15 @@
     display: flex;
 }
 #sys_L{
-    /* background-color: antiquewhite; */
+    background-color: antiquewhite;
     width: 50%;
     height: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 #sys_R{
-    /* background-color: darkgreen; */
+    background-color: darkgreen;
     width: 50%;
     height: 1000px;
 }
@@ -86,6 +89,13 @@
 #Tbt{
     display: flex;
     width: 100%;
+}
+#temp_conf{
+    width: 100%;
+    height: 350px;
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 @keyframes fadeEffect {
     from {opacity: 0;}
