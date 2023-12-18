@@ -44,23 +44,7 @@ $result = mysqli_query($conn,$sql);
           </div>
         </div>
         <div class="content" id = "User">
-        <table class="table" style="width: 100%">
-    <tr>
-        <th>id</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Role</th>
-        <th>action</th>
-    </tr>
-    <?php
-while($row = mysqli_fetch_assoc($result)){
-    echo "<tr>";
-    echo "<td>".$row["ID"]."</td><td>".$row["fname"]."</td><td>".$row["lname"]."</td><td>".$row["role"]."</td><td>";
-    echo "<button class='btn btn-danger' onclick=\"phase_data(".$row["ID"].",'".$row["fname"]."','".$row["lname"]."')\">Edit</button>";
-    echo "</td>";
-    echo "</tr>";
-}
-?></table>
+            <div id = "user"></div>
 <div class="floor">
   <div class="inner-floor">
 
@@ -87,7 +71,6 @@ while($row = mysqli_fetch_assoc($result)){
     </div>
     <button type="submit" id="submit" class="btn btn-primary" style="margin-top: 20px;">update</button>
   </div>
-
 </div>
         </div>
         <div class="content" id = "Troubleshooting​​​">Troubleshooting​​</div>
@@ -95,7 +78,7 @@ while($row = mysqli_fetch_assoc($result)){
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="jsc.js"></script>
+    <script src="script.js"></script>
  
 
 </body>
