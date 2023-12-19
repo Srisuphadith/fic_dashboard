@@ -35,7 +35,7 @@ if(isset($_GET['logoutWarning'])){
                     $resultS = mysqli_query($conn , $sqlS);
                     $sensor = mysqli_fetch_array($resultS,MYSQLI_ASSOC);
                     ?>
-                    <div class="mornitor"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName"><span class="mornitorName">Walve : </span><span class="mornitorStatus"><?php echo ($deviceStatus['pump'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></span></p></div>
+                    <div class="mornitor"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName"><span class="mornitorName">Valve : </span><span class="mornitorStatus"><?php echo ($deviceStatus['pump'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></span></p></div>
                     <div class="mornitor"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName"><span class="mornitorName">Fan : </span><span class="mornitorStatus"><?php echo ($deviceStatus['fan'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></span></p></div>
                     <div class="mornitor"><img src="image/temp.png" alt="temperature sersor" class="monitorLogo"><p class="mornitorName"><span class="mornitorName">Temp : </span><span class="mornitorStatus"><?php echo "<span class='sensorValue'> $sensor[Temperature]</span>"; ?></span></p></div>
                     <div class="mornitor"><img src="image/air.png" alt="air humidity sensor" class="monitorLogo"><p class="mornitorName"><span class="mornitorName">Air : </span><span class="mornitorStatus"><?php echo "<span class='sensorValue'> $sensor[Humidity]</span>"; ?></span></p></div>
