@@ -57,7 +57,6 @@ if(isset($_GET['logoutWarning'])){
                     mysqli_stmt_execute($stmt);
                     
                     if (mysqli_stmt_affected_rows($stmt) > 0) {
-                        
                         echo "<div class='successAlt'> Feedback submitted successfully! </div>";
                     } else {
                         echo "<div class='errorAlt'> Error submitting feedback! </div>";
@@ -121,43 +120,42 @@ function updateStatus(deviceType) {
         });
 }
 
+function updateTable() {
+    fetch('update_statusUser.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const table = document.querySelector('.tableLower');
+            table.innerHTML = `<tr>
+                <th>Date</th>
+                <th>Tempetature</th>
+                <th>Air Humidity</th>
+                <th>Soil Humidity</th>
+            </tr>`;
+            
+            data.forEach(row => {
+                table.innerHTML += `
+                    <tr>
+                        <td class="stm">${row.time_stamp}</td>
+                        <td class="tem">${row.Temperature}</td>
+                        <td class="ahm">${row.Humidity}</td>
+                        <td class="shm">${row.Soil_humidity}</td>
+                    </tr>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error('Fetch Error:', error);
+        });
+}
 
-// function updateMonitorStatus() {
-//         setInterval(function() {
-//             fetch('update_statusUser.php')
-//                 .then(response => {
-//                     if (!response.ok) {
-//                         throw new Error('Network response was not ok');
-//                     }
-//                     return response.json();
-//                 })
-//                 .then(data => {
-//                     if(data.Temperature == 0 || data.Humidity == 0 || data.Soil_humidity == 0){
-//                         document.querySelector('.dataItem').innerHTML = "<p>Some sensor data is zero.</p>";
-//                     } else {
-//                         let timeNow = new Date();
-//                         console.log(timeNow);
-//                         console.log(targetDate);
-//                             document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">The farm is not responsive.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>"
-//                         }else{
-//                             document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOn\"><p class=\"notiTextOn\"><span class=\"notiInside\">The farm is Online.</span></p><p class=\"notiDes\">All sensors work normally.</p></div>"
-//                         }
-//                     }
+setInterval(updateTable, 10000);
+</script>
 
-//                     document.querySelectorAll('span.mornitorStatus')[0].innerHTML = (data.pump == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>";
-//                     document.querySelectorAll('span.mornitorStatus')[1].innerHTML = (data.fan == 1) ? "<span class='successAlt'> open </span>" : "<span class='close'> close </span>";
-//                     document.querySelectorAll('span.mornitorStatus')[2].innerHTML = "<span class=\"sensorValue\">"+data.Temperature+"</span>";
-//                     document.querySelectorAll('span.mornitorStatus')[3].innerHTML = "<span class=\"sensorValue\">"+data.Humidity+"</span>";
-//                     document.querySelectorAll('span.mornitorStatus')[4].innerHTML = "<span class=\"sensorValue\">"+data.Soil_humidity+"</span>";
-                    
-//                 })
-//                 .catch(error => {
-//                     console.error('Fetch Error:', error);
-//                 });
-//         }, 1000);
-//     }
-
-//     updateMonitorStatus();
 
 </script>
 </body>
