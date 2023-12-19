@@ -27,7 +27,7 @@ require_once("connect.php");
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="adminphp">
 <?php 
     require("nav.php"); 
     ?>
@@ -115,7 +115,7 @@ require_once("connect.php");
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
 
-
+<?php require("footer.php"); ?>
 </body>
 
 </html>

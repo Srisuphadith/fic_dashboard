@@ -18,7 +18,7 @@ if(isset($_GET['logoutWarning'])){
     <title>FIC | Account</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="accountphp">
     <?php 
     require("nav.php"); 
     require_once("connect.php");
@@ -40,5 +40,6 @@ if(isset($_GET['logoutWarning'])){
         </div>
     </div>
 
+<?php require("footer.php"); ?>
 </body>
 </html>

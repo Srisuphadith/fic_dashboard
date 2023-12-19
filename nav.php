@@ -109,7 +109,7 @@
 </head>
 
 
-<body class="navPages">
+<body>
 
 <div class="navbarTop">
     <p id="greetingTop" class="greetingTop"></p>
@@ -119,7 +119,6 @@
         </button>
         <?php if (basename($_SERVER['PHP_SELF']) === "account.php"){ ?>
         <div class="dropdown-contentTop">
-            <a href="account.php">ACCOUNT DETAILS</a>
             <a href="<?php echo $_SESSION['role'].'.php'; ?>"><?php echo strtoupper($_SESSION['role']); ?></a>
             <a href="logout.php">LOGOUT</a>
         </div>

@@ -18,7 +18,7 @@ if(isset($_GET['logoutWarning'])){
     <title>FIC | User</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="userphp">
     <?php require("nav.php"); ?>
     <div class="upperContent">    
         <div class="upperRight">
@@ -158,5 +158,6 @@ setInterval(updateTable, 10000);
 
 
 </script>
+<?php require("footer.php"); ?>
 </body>
 </html>

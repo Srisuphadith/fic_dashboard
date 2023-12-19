@@ -18,7 +18,7 @@ if(isset($_GET['logoutWarning'])){
     <title>FIC | Viewer</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="viewerphp">
     <?php require("nav.php"); ?>
     <div class="viewerPages">
     <div class="viewerFlex">
@@ -101,6 +101,6 @@ if(isset($_GET['logoutWarning'])){
 
     updateMonitorStatus();
 </script>
-
+<?php require("footer.php"); ?>
 </body>
 </html>
