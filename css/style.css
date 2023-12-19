@@ -363,3 +363,25 @@ textarea {
 .buttonMid {
     text-align: center;
 }
+
+.tableLower {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 12px;
+    background-color: #0A122A;
+}
+
+td,
+th {
+    padding: 4px 0px;
+    margin: 0px;
+    background-color: white;
+    border: none;
+    text-align: center;
+}
+
+tr {
+    padding: 0px;
+    margin: 0px;
+}

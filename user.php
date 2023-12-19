@@ -26,12 +26,18 @@ if(isset($_GET['logoutWarning'])){
             <div class="manualItem">
                 <?php 
                 require_once("connect.php");
-                $sqlD = "SELECT `pump`, `fan`, `id` FROM `status` WHERE `id` = 1";
+                $sqlD = "SELECT `pump`, `fan`, `id` ,`manual_state` FROM `status` WHERE `id` = 1";
                 $resultD = mysqli_query($conn , $sqlD);
                 $deviceStatus = mysqli_fetch_array($resultD , MYSQLI_ASSOC);
+                if($deviceStatus['manual_state'] == 1){
                 ?>
                     <div class="manualInter"><button type="submit" name="walve" class="manualButton" onclick="updateStatus('pump')"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName">Valve : <?php echo ($deviceStatus['pump'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></p></button></div>
                     <div class="manualInter"><button type="submit" name="fan" class="manualButton" onclick="updateStatus('fan')"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName">Fan : <?php echo ($deviceStatus['fan'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></p></button></div>
+                    <div class="manualInter"><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='open'> Now Manual </span>" : "<span class='close'> Now Automatic </span>"; ?></p></button></div>
+                <?php }else{ ?>
+                    <div class="manualInter"><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='open'> Now Manual </span>" : "<span class='close'> Now Automatic </span>"; ?></p></button></div>
+                <?php } ?>
+
             </div>
         </div>
         <div class="upperLeft">
@@ -98,22 +104,23 @@ if(isset($_GET['logoutWarning'])){
         </div>
     </div>
     <script>
-    function updateStatus(deviceType) {
-        fetch(`update_user.php?type=${deviceType}`)
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                }
-                throw new Error('Network response was not ok');
-            })
-            .then(result => {
-                console.log(result);
-                location.reload();
-            })
-            .catch(error => {
-                console.error('Fetch Error:', error);
-            });
-    }
+function updateStatus(deviceType) {
+    fetch(`update_user.php?type=${deviceType}`)
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error('Network response was not ok');
+        })
+        .then(result => {
+            console.log(result);
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Fetch Error:', error);
+        });
+}
+
 </script>
 </body>
 </html>
