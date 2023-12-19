@@ -46,9 +46,6 @@ if(isset($_GET['logoutWarning'])){
         <div class="upperLeft">
             <h2 class="feedback">Feedback Submission​</h2>
             <?php
-            if(isset($_GET['success']) && $_GET['success'] === 'true') {
-                echo "<div class='successAlt'> Feedback submitted successfully! </div>";}
-
             if(isset($_POST['feedbackB'])){
                 $feedback = $_POST['feedback'];
                 $sql = "INSERT INTO feedback (`userID`, `feedback`) VALUES (?, ?)";
@@ -60,8 +57,8 @@ if(isset($_GET['logoutWarning'])){
                     mysqli_stmt_execute($stmt);
                     
                     if (mysqli_stmt_affected_rows($stmt) > 0) {
-                        header("Location: user.php?success=true");
-                        exit();
+                        
+                        echo "<div class='successAlt'> Feedback submitted successfully! </div>";
                     } else {
                         echo "<div class='errorAlt'> Error submitting feedback! </div>";
                     }
@@ -75,7 +72,7 @@ if(isset($_GET['logoutWarning'])){
             ?>
 
             <form action="user.php" method="post" class="feedbackform">
-                <textarea name="feedback" rows="8" placeholder="Type your feedback"></textarea>
+                <textarea name="feedback" rows="8" placeholder="Type your feedback" required></textarea>
                 <div class="buttonMid"><button type="submit" name="feedbackB" class="button"> submit </button></div>
             </form>
         </div>
@@ -96,10 +93,10 @@ if(isset($_GET['logoutWarning'])){
             </tr>
             <?php while($sensor = mysqli_fetch_array($resultS)){ ?>
             <tr>
-                <td><?php echo $sensor['time_stamp']; ?></td>
-                <td><?php echo $sensor['Temperature']; ?></td>
-                <td><?php echo $sensor['Humidity']; ?></td>
-                <td><?php echo $sensor['Soil_humidity']; ?></td>
+                <td class="stm"><?php echo $sensor['time_stamp']; ?></td>
+                <td class="tem"><?php echo $sensor['Temperature']; ?></td>
+                <td class="ahm"><?php echo $sensor['Humidity']; ?></td>
+                <td class="shm"><?php echo $sensor['Soil_humidity']; ?></td>
             </tr>
             <?php } ?>
         </table>
@@ -123,6 +120,44 @@ function updateStatus(deviceType) {
             console.error('Fetch Error:', error);
         });
 }
+
+
+// function updateMonitorStatus() {
+//         setInterval(function() {
+//             fetch('update_statusUser.php')
+//                 .then(response => {
+//                     if (!response.ok) {
+//                         throw new Error('Network response was not ok');
+//                     }
+//                     return response.json();
+//                 })
+//                 .then(data => {
+//                     if(data.Temperature == 0 || data.Humidity == 0 || data.Soil_humidity == 0){
+//                         document.querySelector('.dataItem').innerHTML = "<p>Some sensor data is zero.</p>";
+//                     } else {
+//                         let timeNow = new Date();
+//                         console.log(timeNow);
+//                         console.log(targetDate);
+//                             document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">The farm is not responsive.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>"
+//                         }else{
+//                             document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOn\"><p class=\"notiTextOn\"><span class=\"notiInside\">The farm is Online.</span></p><p class=\"notiDes\">All sensors work normally.</p></div>"
+//                         }
+//                     }
+
+//                     document.querySelectorAll('span.mornitorStatus')[0].innerHTML = (data.pump == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>";
+//                     document.querySelectorAll('span.mornitorStatus')[1].innerHTML = (data.fan == 1) ? "<span class='successAlt'> open </span>" : "<span class='close'> close </span>";
+//                     document.querySelectorAll('span.mornitorStatus')[2].innerHTML = "<span class=\"sensorValue\">"+data.Temperature+"</span>";
+//                     document.querySelectorAll('span.mornitorStatus')[3].innerHTML = "<span class=\"sensorValue\">"+data.Humidity+"</span>";
+//                     document.querySelectorAll('span.mornitorStatus')[4].innerHTML = "<span class=\"sensorValue\">"+data.Soil_humidity+"</span>";
+                    
+//                 })
+//                 .catch(error => {
+//                     console.error('Fetch Error:', error);
+//                 });
+//         }, 1000);
+//     }
+
+//     updateMonitorStatus();
 
 </script>
 </body>
