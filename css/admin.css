@@ -50,14 +50,16 @@
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 20px;
+    color: white;
 }
 
 .side_bar button:hover {
-    background-color: #698F3F;
+    background-color: #ffffff2c;
 }
 
 .side_bar button.active {
     background-color: #E7DECD;
+    color: black;
 }
 
 .floor {
