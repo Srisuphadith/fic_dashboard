@@ -73,7 +73,29 @@ if(isset($_GET['logoutWarning'])){
     </div>
     <div class="lowerContent">
         <h2 class="sensor">Measurement Value</h2>
-        <div class="sensorItem"></div>
+        <div class="sensorItem">
+            <?php
+                $sqlS = "SELECT * FROM `Sensor_data` ORDER BY id DESC LIMIT 5";
+                $resultS = mysqli_query($conn , $sqlS);
+            ?>
+        <table border="1" class="tableLower" width="90%" align="center">
+            <tr>
+                <th>Date</th>
+                <th>Tempetature</th>
+                <th>Air Humidity</th>
+                <th>Soil Humidity</th>
+            </tr>
+            <?php while($sensor = mysqli_fetch_array($resultS)){ ?>
+            <tr>
+                <td><?php echo $sensor['time_stamp']; ?></td>
+                <td><?php echo $sensor['Temperature']; ?></td>
+                <td><?php echo $sensor['Humidity']; ?></td>
+                <td><?php echo $sensor['Soil_humidity']; ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+            
+        </div>
     </div>
     <script>
     function updateStatus(deviceType) {

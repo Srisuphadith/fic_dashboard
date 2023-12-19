@@ -3,14 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: #698F3F;
+    font-family: Arial;
+    margin: 0px 0px 20px 0px;
+  }
+
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: #FBFAF8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar p {
+    float: left;
+    font-size: 16px;
+    color: #FBFAF8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 0px;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: right;
+    overflow: hidden;
+    padding-right: 0px;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #FBFAF8;
+    padding: 14px 16px ;
+    /* border: solid red; */
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #0A122A;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: fit-content;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right: 0; /* Aligning dropdown to the right */
+    }
+    </style>
+
 </head>
+
+
 <body class="navPages">
-    <?php if(isset($_GET['errorMessage'])){
-        echo "<div class='alert'> Logout Failed !!! </div>";
-    }?>
-    <div class="navbar">
-        <p class="userName"><?php echo strtoupper($_SESSION['role'])." : ".$_SESSION['name']; ?></p>
-        <a href="logout.php" class="logout">logout</a>
+
+<div class="navbar">
+    <p id="greeting" class="greeting"></p>
+    <div class="dropdown">
+        <button class="dropbtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="account.php">Account Details</a>
+            <a href="logout.php">Logout</a>
+        </div>
+    </div>
 </div>
+
+<script>
+    // Get the current hour
+    const currentHour = new Date().getHours();
+
+    // Define the greeting based on the time of day
+    let greeting = "";
+    if (currentHour >= 5 && currentHour < 12) {
+        greeting = "Good morning";
+    } else if (currentHour >= 12 && currentHour < 18) {
+        greeting = "Good afternoon";
+    } else {
+        greeting = "Good evening";
+    }
+
+    // Update the greeting text
+    document.getElementById("greeting").textContent = `Hello <?php echo $_SESSION['name']; ?> ${greeting}`;
+</script>
+
 </body>
 </html>

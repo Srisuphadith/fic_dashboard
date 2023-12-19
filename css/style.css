@@ -184,30 +184,6 @@ a.register {
     padding: px 0px 0px 0px;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 40px;
-    background-color: #0A122A;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #FBFAF8;
-}
-
-p.userName,
-.logout {
-    color: #FBFAF8;
-}
-
-.logout:hover {
-    color: #fbfaf8b6;
-}
-
-.logout:active {
-    color: #FBFAF8;
-}
-
 .navPages {
     margin: 0px;
 }
@@ -309,7 +285,11 @@ span.mornitorStatus {
 .lowerContent {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin: 0px 0px 20px 20px;
+    margin: 0px 20px 20px 20px;
+}
+
+.tableLower {
+    margin: 0px 20px 20px 20px;
 }
 
 .upperContent {
@@ -360,10 +340,17 @@ span.mornitorStatus {
 
 textarea {
     width: 100%;
-    resize: both;
+    resize: vertical;
     border: 1px solid rgba(149, 157, 165, 0.6);
     box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 6px;
     margin: 12px 0px;
+}
+
+.sensorItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 12px 12px 12px;
 }
 
 .buttonMid {
