@@ -138,6 +138,10 @@
 
     // Update the greeting text
     document.getElementById("greetingTop").textContent = `Hello <?php echo $_SESSION['name']; ?> ${greeting}`;
+
+    <?php if (basename($_SERVER['PHP_SELF']) !== "admin.php"): ?>
+        document.querySelector(".navbarTop").style.marginBottom = "20px";
+    <?php endif; ?>
 </script>
 
 </body>
