@@ -45,12 +45,12 @@ require_once("connect.php");
             <div id="sys">
                 <div id="sys_L">
                     <div id ="temp_conf">
-                        <div style="width:50%;color:white;padding-top:20px;"> <h2>Sensor gain</h2></div>
-                        <div style="display:flex;padding-top:20px;"><div style="width:50%;color:white;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%;height:25px;"></div>
-                        <div style="display:flex;padding-top:20px;"><div style="width:50%;color:white;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%;height:25px;"></div>
-                        <div style="display:flex;padding-top:20px;"><div style="width:50%;color:white;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%;height:25px;"></div>
-                        <div style="display:flex;padding-top:20px;"><div style="width:50%;color:white;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%;height:25px;"></div>
-                        <div style="display:flex;padding-top:20px;"><div style="width:50%;color:white;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%;height:25px;"></div>
+                        <div style="width:100%;color:#0A122A;padding-top:20px;"> <h2 >Sensor gain</h2></div>
+                        <div style="display:flex;padding:12px;border:1px solid rgba(149, 157, 165, 0.4);border-radius:4px;margin:4px 0px;"><div style="width:50%;color:#0A122A;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%;height:25px;border:solid 1px #0A122A40"></div>
+                        <div style="display:flex;padding:12px;border:1px solid rgba(149, 157, 165, 0.4);border-radius:4px;margin:4px 0px;"><div style="width:50%;color:#0A122A;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%;height:25px;border:solid 1px #0A122A40"></div>
+                        <div style="display:flex;padding:12px;border:1px solid rgba(149, 157, 165, 0.4);border-radius:4px;margin:4px 0px;"><div style="width:50%;color:#0A122A;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%;height:25px;border:solid 1px #0A122A40"></div>
+                        <div style="display:flex;padding:12px;border:1px solid rgba(149, 157, 165, 0.4);border-radius:4px;margin:4px 0px;"><div style="width:50%;color:#0A122A;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%;height:25px;border:solid 1px #0A122A40"></div>
+                        <div style="display:flex;padding:12px;border:1px solid rgba(149, 157, 165, 0.4);border-radius:4px;margin:4px 0px;"><div style="width:50%;color:#0A122A;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%;height:25px;border:solid 1px #0A122A40"></div>
                         <button class = "btn btn-primary" style="width:100%;margin-top:20px;" id = "update_parameter">update</button>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ require_once("connect.php");
                 </div>
             </div>
         </div>
-        <div class="content" id="User">
+        <div class="content" id="User" style="margin:20px">
             <div id="user"></div>
             <div class="floor">
                 <div class="inner-floor">
@@ -92,7 +92,7 @@ require_once("connect.php");
         </div>
         <div class="content" id="Troubleshooting​​​">
             <div id = "Tbt">
-            <div style="width:50%;padding-left:20px;padding-right:20px;">
+            <div >
                 <div id="s_ctn">
                     <div id = "head">Device status</div>
                     <div id="content_status"></div>
@@ -103,10 +103,6 @@ require_once("connect.php");
                     <div id="content_sensor"></div>
                 </div>
                 <button id = "re_status" class="btn btn-primary" style="margin-left:20px;margin-top:20px;">Refresh</button>
-            </div>
-
-            <div style="width:50%;height:1000px;padding-right:20px;padding-left:20px;padding-top:20px;">
-                    <div style="width:100%;height:650px;background-color:#698F3F;"></div>
             </div>
             </div>
             

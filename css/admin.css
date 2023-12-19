@@ -2,17 +2,20 @@
     width: 100%;
     height: 1000px;
     display: flex;
-    background-color: #E7DECD;
+}
+
+#user .table {
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
+    text-align: center;
 }
 
 .side_bar {
-    background-color: #E7DECD;
     width: 20%;
     height: 1000px;
 }
 
 .content {
-    background-color: #E7DECD;
+    background-color: #ffffff;
     width: 80%;
     height: 1000px;
     display: none;
@@ -26,7 +29,7 @@
 }
 
 #sys_L {
-    background-color: #E7DECD;
+    background-color: #ffffff;
     width: 50%;
     height: 1000px;
     padding-left: 20px;
@@ -35,13 +38,12 @@
 }
 
 #sys_R {
-    background-color: #E7DECD;
+    background-color: #ffffff;
     width: 50%;
     height: 1000px;
 }
 
 .side_bar button {
-    background-color: inherit;
     float: left;
     border: none;
     outline: none;
@@ -49,42 +51,56 @@
     width: 100%;
     padding: 14px 16px;
     transition: 0.3s;
+    background-color: #E7DECD;
     font-size: 20px;
-    color: white;
 }
 
 .side_bar button:hover {
-    background-color: #ffffff2c;
+    background-color: #ffffff5b;
 }
 
 .side_bar button.active {
-    background-color: #E7DECD;
     color: black;
+    border: solid 1px black;
 }
 
 .floor {
     width: 100%;
     height: 500px;
-    background-color: #698F3F;
 }
 
 .inner-floor {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
+}
+
+#defaultOpen {
+    color: black;
+}
+
+#b2 {
+    color: black;
+}
+
+#b3 {
+    color: black;
 }
 
 .top_side {
     position: fixed;
     width: 20%;
     height: 1000px;
-    background-color: #804E49;
+    background-color: #E7DECD;
 }
 
 #s_ctn {
     width: 100%;
-    height: 200px;
-    background-color: #698F3F;
+    margin: 4px 20px;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
     margin-top: 20px;
 }
 
@@ -102,17 +118,16 @@
 }
 
 #Tbt {
-    display: flex;
     width: 100%;
-    background-color: #E7DECD;
+    background-color: #ffffff;
 }
 
 #temp_conf {
     width: 100%;
     height: 420px;
-    background-color: #0A122A;
-    padding-left: 10px;
-    padding-right: 10px;
+    color: #0A122A;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 16px;
 }
 
 @keyframes fadeEffect {
@@ -122,4 +137,8 @@
     to {
         opacity: 1;
     }
+}
+
+th {
+    text-align: center;
 }
