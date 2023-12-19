@@ -135,19 +135,53 @@ a.register {
     text-decoration: underline;
 }
 
-div.alert {
-    text-align: center;
-    color: #FE6D73;
-}
-
 .alert {
     text-align: center;
     color: #FE6D73;
 }
 
-div.successAlt {
+.successAlt {
     text-align: center;
     color: #17C3B2;
+}
+
+.notiTextOn {
+    text-align: center;
+    padding: 4px 8px;
+    font-size: 16px;
+    background-color: #17c3b28f;
+    border-radius: 4px;
+}
+
+.notiDes {
+    text-align: center;
+}
+
+.notiTextOff {
+    text-align: center;
+    padding: 4px 8px;
+    font-size: 16px;
+    background-color: #fe6d728f;
+    border-radius: 4px;
+}
+
+.notiTextAllOff {
+    background-color: #fe6d725d;
+    box-shadow: #fe6d725d 0px 0px 6px;
+    padding: 0px 0px 12px 0px;
+}
+
+.notiTextAllOn {
+    background-color: #17c3b25d;
+    box-shadow: #17c3b25d 0px 0px 6px;
+    padding: 0px 0px 12px 0px;
+}
+
+.notiInside {
+    color: #0A122A;
+    font-size: 16px;
+    font-weight: 600;
+    padding: px 0px 0px 0px;
 }
 
 .navbar {
@@ -180,7 +214,15 @@ p.userName,
 
 .viewerFlex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.moniItem {
+    width: 70%;
+}
+
+.viewerPages {
+    margin: 0px 32px;
 }
 
 .moni,
@@ -198,14 +240,17 @@ p.userName,
     margin: 0px;
 }
 
-.viewerLeft {
-    width: 70%;
-}
-
 .moniItem,
 .dataItem {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.dataItem {
+    height: 199.2px;
+    width: 241.762px;
+    align-items: center;
+    padding: 4px 12px;
 }
 
 .moniItem {
@@ -270,7 +315,7 @@ span.mornitorStatus {
 .upperContent {
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px 20px 20px;
+    margin: 0px 20px 40px 20px;
 }
 
 .manualButton {
@@ -307,4 +352,20 @@ span.mornitorStatus {
 
 .sensorValue {
     color: #0A122A;
+}
+
+.feedbackform {
+    padding: 12px 20px;
+}
+
+textarea {
+    width: 100%;
+    resize: both;
+    border: 1px solid rgba(149, 157, 165, 0.6);
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 6px;
+    margin: 12px 0px;
+}
+
+.buttonMid {
+    text-align: center;
 }
