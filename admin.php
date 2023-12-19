@@ -49,11 +49,11 @@ require_once("connect.php");
                 <div id="sys_L">
                     <div id ="temp_conf">
                         <div style="width:50%;color:white;padding-top:20px;"> <h2>Sensor gain</h2></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;color:white;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%height:25px"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;color:white;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%height:25px"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;color:white;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%height:25px"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;color:white;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%height:25px"></div>
-                        <div style="display:flex;height;25px;padding-top:20px;"><div style="width:50%;color:white;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%height:25px"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;color:white;">pump_max_temp</div><input type="text" class="input" id = "pump_max_temp" style="width:50%;height:25px;"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;color:white;">pump_min_temp</div><input type="text" class="input" id = "pump_min_temp" style="width:50%;height:25px;"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;color:white;">pump_max_humi</div><input type="text" class="input" id = "pump_max_humi" style="width:50%;height:25px;"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;color:white;">fan_min_temp</div><input type="text" class="input" id = "fan_min_temp" style="width:50%;height:25px;"></div>
+                        <div style="display:flex;height:25px;padding-top:20px;"><div style="width:50%;color:white;">fan_min_humi</div><input type="text" class="input" id = "fan_min_humi" style="width:50%;height:25px;"></div>
                         <button class = "btn btn-primary" style="width:100%;margin-top:20px;" id = "update_parameter">update</button>
                     </div>
                 </div>
