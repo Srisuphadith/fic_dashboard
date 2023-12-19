@@ -140,6 +140,24 @@ a.register {
     color: #FE6D73;
 }
 
+.alertMN {
+    text-align: center;
+    background-color: #fe6d7249;
+    font-weight: 600px;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.alertMF {
+    text-align: center;
+    background-color: #17C3B249;
+    font-weight: 600px;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 8px;
+}
+
 .successAlt {
     text-align: center;
     color: #17C3B2;

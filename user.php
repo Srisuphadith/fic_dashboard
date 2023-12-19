@@ -23,7 +23,7 @@ if(isset($_GET['logoutWarning'])){
     <div class="upperContent">    
         <div class="upperRight">
             <h2 class="manual">Manual Interventions​</h2>        
-            <div class="manualItem">
+            
                 <?php 
                 require_once("connect.php");
                 $sqlD = "SELECT `pump`, `fan`, `id` ,`manual_state` FROM `status` WHERE `id` = 1";
@@ -31,14 +31,17 @@ if(isset($_GET['logoutWarning'])){
                 $deviceStatus = mysqli_fetch_array($resultD , MYSQLI_ASSOC);
                 if($deviceStatus['manual_state'] == 1){
                 ?>
+                <div class="manualItem">
                     <div class="manualInter"><button type="submit" name="walve" class="manualButton" onclick="updateStatus('pump')"><img src="image/walve.png" alt="walve" class="monitorLogo"><p class="mornitorName">Valve : <?php echo ($deviceStatus['pump'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></p></button></div>
                     <div class="manualInter"><button type="submit" name="fan" class="manualButton" onclick="updateStatus('fan')"><img src="image/fan.png" alt="fan" class="monitorLogo"><p class="mornitorName">Fan : <?php echo ($deviceStatus['fan'] == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>"; ?></p></button></div>
-                    <div class="manualInter"><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='open'> Now Manual </span>" : "<span class='close'> Now Automatic </span>"; ?></p></button></div>
+                    <div class="manualInter"><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='close'> Now Manual </span>" : "<span class='open'> Now Automatic </span>"; ?></p></button></div></div>
+                    <div class="alertMN" style="bottom:0px;"><i class="fas fa-exclamation-circle"></i> Please make the state automatic. To work efficiently when you are finished using it.</div>
                 <?php }else{ ?>
-                    <div class="manualInter"><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='open'> Now Manual </span>" : "<span class='close'> Now Automatic </span>"; ?></p></button></div>
+                    <div class="manualItem">
+                    <div class="manualInter" style="text-align: right; "><button type="submit" name="state" class="manualButton" onclick="updateStatus('state')"><p class="mornitorName">State : <?php echo ($deviceStatus['manual_state'] == 1) ? "<span class='close'> Now Manual </span>" : "<span class='open'> Now Automatic </span>"; ?></p></button></div></div>
+                    <div class="alertMF" style="bottom:0px;">We make every device turn off and work automatically.</div>
                 <?php } ?>
 
-            </div>
         </div>
         <div class="upperLeft">
             <h2 class="feedback">Feedback Submission​</h2>
