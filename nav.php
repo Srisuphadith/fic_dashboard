@@ -117,10 +117,18 @@
         <button class="dropbtnTop">
             <i class="fas fa-bars"></i>
         </button>
+        <?php if (basename($_SERVER['PHP_SELF']) === "account.php"){ ?>
         <div class="dropdown-contentTop">
-            <a href="account.php">Account Details</a>
-            <a href="logout.php">Logout</a>
+            <a href="account.php">ACCOUNT DETAILS</a>
+            <a href="<?php echo $_SESSION['role'].'.php'; ?>"><?php echo strtoupper($_SESSION['role']); ?></a>
+            <a href="logout.php">LOGOUT</a>
         </div>
+        <?php }else{ ?>
+        <div class="dropdown-contentTop">
+            <a href="account.php">ACCOUNT DETAILS</a>
+            <a href="logout.php">LOGOUT</a>
+        </div>
+        <?php } ?>
     </div>
 </div>
 
@@ -141,9 +149,9 @@
     // Update the greeting text
     document.getElementById("greetingTop").textContent = `Hello <?php echo $_SESSION['name']; ?> ${greeting}`;
 
-    <?php if (basename($_SERVER['PHP_SELF']) !== "admin.php"): ?>
+    <?php if (basename($_SERVER['PHP_SELF']) !== "admin.php"){ ?>
         document.querySelector(".navbarTop").style.marginBottom = "20px";
-    <?php endif; ?>
+    <?php } ?>
 </script>
 
 </body>
