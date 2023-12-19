@@ -209,7 +209,9 @@ a.register {
 .system,
 .manage,
 .trouble,
-.sensor {
+.sensor,
+.info,
+.reset {
     color: #FBFAF8;
     background-color: #804E49;
     padding: 12px 20px;
@@ -217,7 +219,9 @@ a.register {
 }
 
 .moniItem,
-.dataItem {
+.dataItem,
+.infobox,
+.resetbox {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -229,7 +233,8 @@ a.register {
     padding: 4px 12px;
 }
 
-.moniItem {
+.moniItem,
+.infobox {
     margin-bottom: 40px;
 }
 
@@ -282,7 +287,9 @@ span.mornitorStatus {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.lowerContent {
+.lowerContent,
+.infobox,
+.resetbox {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin: 0px 20px 20px 20px;

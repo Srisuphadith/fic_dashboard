@@ -1,28 +1,32 @@
-.ctn{
+.ctn {
     width: 100%;
     height: 1000px;
     display: flex;
     background-color: #E7DECD;
     padding-top: 60px;
 }
-.side_bar{
+
+.side_bar {
     background-color: #E7DECD;
     width: 20%;
     height: 1000px;
 }
-.content{
+
+.content {
     background-color: #E7DECD;
     width: 80%;
     height: 1000px;
     display: none;
     animation: fadeEffect 1s;
 }
-#sys{
+
+#sys {
     width: 100%;
     height: 1000px;
     display: flex;
 }
-#sys_L{
+
+#sys_L {
     background-color: #E7DECD;
     width: 50%;
     height: 1000px;
@@ -30,12 +34,14 @@
     padding-right: 20px;
     padding-top: 20px;
 }
-#sys_R{
+
+#sys_R {
     background-color: #E7DECD;
     width: 50%;
     height: 1000px;
 }
-.side_bar button{
+
+.side_bar button {
     background-color: inherit;
     float: left;
     border: none;
@@ -46,59 +52,73 @@
     transition: 0.3s;
     font-size: 20px;
 }
-.side_bar button:hover{
+
+.side_bar button:hover {
     background-color: #698F3F;
 }
-.side_bar button.active{
+
+.side_bar button.active {
     background-color: #E7DECD;
 }
-.floor{
+
+.floor {
     width: 100%;
     height: 500px;
-    background-color:#698F3F;
+    background-color: #698F3F;
 }
-.inner-floor{
 
+.inner-floor {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-.top_side{
+
+.top_side {
     position: fixed;
     width: 20%;
     height: 1000px;
     background-color: #804E49;
 }
-#s_ctn{
+
+#s_ctn {
     width: 100%;
     height: 200px;
     background-color: #698F3F;
     margin-top: 20px;
 }
-#head{
+
+#head {
     text-align: center;
     width: 100%;
     font-size: 30px;
     padding-top: 20px;
 }
-#content_status{
-   margin-left: 30px;
-   font-size: 30px;
-   height: fit-content;
+
+#content_status {
+    margin-left: 30px;
+    font-size: 30px;
+    height: fit-content;
 }
-#Tbt{
+
+#Tbt {
     display: flex;
     width: 100%;
     background-color: #E7DECD;
 }
-#temp_conf{
+
+#temp_conf {
     width: 100%;
     height: 420px;
     background-color: #0A122A;
     padding-left: 10px;
     padding-right: 10px;
 }
+
 @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

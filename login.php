@@ -53,8 +53,8 @@
         <div class="loginMid">
             <h1 class="header">Login</h1>
             <form action="login.php" method="post">
-                <label for="username">Gmail</label><br>
-                <input type="text" name="username" placeholder="Enter your gmail" required><br><br>
+                <label for="username">Username</label><br>
+                <input type="text" name="username" placeholder="Enter your username" required><br><br>
                 <label for="pass">Password</label><br>
                 <input type="password" name="pass" placeholder="Enter your password" required>
                 <br><br><br>

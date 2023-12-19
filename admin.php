@@ -28,12 +28,9 @@ require_once("connect.php");
 </head>
 
 <body>
-    <div class="navbar" style="padding-left:20px;padding-right:20px;z-index: 1000;position:fixed;width:100%;">
-        <p class="userName">
-            <?php echo strtoupper($_SESSION['role'])." : ".$_SESSION['name']; ?>
-        </p>
-        <a href="logout.php" class="logout">logout</a>
-    </div>
+<?php 
+    require("nav.php"); 
+    ?>
     <div class="ctn">
         <div class="side_bar">
             <div class="top_side">

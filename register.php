@@ -66,8 +66,8 @@ if(isset($_POST['submit'])) {
             <form action="register.php" method="post">
                 <label for="name">Name</label><br>
                 <div class="name"><input class="halfIn" type="text" name="fname" placeholder="Enter Firstname" required><input class="halfIn" type="text" name="lname" placeholder="Enter Lastname" required></div><br>
-                <label for="username">Gmail</label><br>
-                <input type="text" name="username" placeholder="Enter your gmail" required><br><br>
+                <label for="username">Username</label><br>
+                <input type="text" name="username" placeholder="Enter your username" required><br><br>
                 <label for="pass">Password</label><br>
                 <input type="password" name="pass" placeholder="Enter your password" required><br><br>
                 <label for="pass">Re-enter Password</label><br>
