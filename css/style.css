@@ -291,12 +291,22 @@ div.mornitor {
     padding: 4px 12px;
 }
 
-span.mornitorName {
+span.mornitorName,
+p.InfoHead {
     font-weight: 600;
 }
 
-span.mornitorStatus {
-    font-weight: 450;
+.infoText {
+    font-weight: 400;
+}
+
+p.InfoHead {
+    font-size: 24px;
+}
+
+.infoItem,
+.resetItem {
+    padding: 8px 40px;
 }
 
 .manualItem {
