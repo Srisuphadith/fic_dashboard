@@ -45,7 +45,10 @@ if(isset($_GET['logoutWarning'])){
                     const weatherInfo = `
                     <div class="weatherShow">
                         <div class="insideWeather">
-                            <img src="${img}" alt="Weather icon">
+                            <div class="weatherPicText">
+                                <img src="${img}" alt="Weather icon">
+                                <p class=InfoHead>Country : <span class="infoText">Bangkok</span></p>
+                            </div>
                             <div class="weatherTextAll">
                                 <p class=InfoHead>Temperature: <span class="infoText">${temp}°C</span></p>
                                 <p class=InfoHead>Humidity: <span class="infoText">${humi}%</span></p>
