@@ -32,7 +32,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Temperature day : <?php echo $day;?>"
+		text: "Temperature day : <?php echo $data[0];?>"
 	},
 	data: [{
 		type: "line", //change type to bar, line, area, pie, etc  
