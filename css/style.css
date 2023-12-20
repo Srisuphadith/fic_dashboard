@@ -93,6 +93,26 @@ input {
     width: 40%;
 }
 
+.weatherShow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideWeather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7DECD;
+    padding: 4px 16px;
+    border-radius: 8px;
+    box-shadow: #E7DECD40 0px 0px 16px;
+}
+
+.weatherTextAll {
+    margin-left: 8px;
+}
+
 .name {
     display: flex;
     justify-content: space-between;
@@ -236,7 +256,8 @@ a.register {
 .trouble,
 .sensor,
 .info,
-.reset {
+.reset,
+.weather {
     color: #FBFAF8;
     background-color: #804E49;
     padding: 12px 20px;
@@ -246,7 +267,8 @@ a.register {
 .moniItem,
 .dataItem,
 .infobox,
-.resetbox {
+.resetbox,
+.weatherItem {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -259,7 +281,8 @@ a.register {
 }
 
 .moniItem,
-.infobox {
+.infobox,
+.weatherItem {
     margin-bottom: 40px;
 }
 
@@ -305,7 +328,8 @@ p.InfoHead {
 }
 
 .infoItem,
-.resetItem {
+.resetItem,
+.weatherItem {
     padding: 8px 40px;
 }
 

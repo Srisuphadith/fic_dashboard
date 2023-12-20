@@ -21,6 +21,45 @@ if(isset($_GET['logoutWarning'])){
 <body id="viewerphp">
     <?php require("nav.php"); ?>
     <div class="viewerPages">
+    <div class="viewerWea">
+        <h2 class="weather">Weather</h2>
+        <div class="weatherItem" id="my-div">
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const country = 'Bangkok';
+            const url = "https://api.openweathermap.org/data/2.5/weather?q=" + country + "&appid=5d05d21c66da638fb6162d37694d1a8c&units=metric";
+            
+            $.ajax({
+                dataType: "json",
+                url: url,
+                success: function (response) {
+                    const temp = response["main"]["temp"];
+                    const humi = response["main"]["humidity"];
+                    const description = response["weather"][0]["description"];
+                    const icon = response["weather"][0]["icon"];
+                    const img = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+                    const weatherInfo = `
+                    <div class="weatherShow">
+                        <div class="insideWeather">
+                            <img src="${img}" alt="Weather icon">
+                            <div class="weatherTextAll">
+                                <p class=InfoHead>Temperature: <span class="infoText">${temp}°C</span></p>
+                                <p class=InfoHead>Humidity: <span class="infoText">${humi}%</span></p>
+                                <p class=InfoHead>Description: <span class="infoText">${description}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    
+                    $('#my-div').html(weatherInfo);
+                }
+            });
+        });
+    </script>
     <div class="viewerFlex">
             <div class="moniItem">
                 <h2 class="moni">Real-Time Monitoring</h2>
