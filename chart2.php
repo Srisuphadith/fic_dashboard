@@ -16,6 +16,7 @@ try{
         $calender = explode("-",$data[0]);
         $day = $calender[2];
         $data2 = explode(":",$data[1]);
+        echo $data2[0]."<br>";
         array_push($dataPoints, array("x"=>  $data2[0], "y"=> $row->Temperature));
     }
 	$link = null;
