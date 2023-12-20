@@ -427,7 +427,8 @@ textarea {
     margin: 20px 12px 12px 12px;
 }
 
-.pastDataItem {
+.pastDataItem,
+.tableWrapper {
     display: flex;
     align-items: center;
     justify-content: center;

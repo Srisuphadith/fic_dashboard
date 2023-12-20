@@ -1,8 +1,8 @@
 <?php
 require_once("connect.php");
 
-$sevenDaysAgo = date('Y-m-d H:i:s', strtotime('-1 hours'));
-$sqlPast = "SELECT `Temperature`, `Humidity`, `Soil_humidity`, `time_stamp` FROM `Sensor_data` WHERE `time_stamp` >= '$sevenDaysAgo' ORDER BY `time_stamp` DESC";
+$sevenDaysAgo = date('Y-m-d H:i:s', strtotime('-7 days'));
+$sqlPast = "SELECT `Temperature`, `Humidity`, `Soil_humidity`, `time_stamp` FROM `Sensor_data` WHERE (`time_stamp` >= '$sevenDaysAgo')AND(`ID` % 120 = 0) ORDER BY `time_stamp` DESC";
 $result = mysqli_query($conn, $sqlPast);
 
 if ($result) {
