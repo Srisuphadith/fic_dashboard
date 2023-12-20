@@ -106,6 +106,7 @@ if(isset($_GET['logoutWarning'])){
             ?>
         <div class="tableWrapper" style="max-height: 200px; overflow-y: auto; width:100%; text-align:center;" >
         <table border="1" class="tableLower" width="90%" align="center">
+            <br>
             <tr>
                 <th>Date</th>
                 <th>Tempetature</th>
@@ -137,7 +138,7 @@ if(isset($_GET['logoutWarning'])){
             })
             .then(data => {
     const pastDataDiv = document.querySelector('.tableLower');
-    pastDataDiv.innerHTML = `<tr>
+    pastDataDiv.innerHTML = `<br><tr>
         <th>Date</th>
         <th>Tempetature</th>
         <th>Air Humidity</th>
