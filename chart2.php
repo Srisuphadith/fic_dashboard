@@ -10,6 +10,8 @@ try{
 		
     foreach($result as $row){
         $data = explode(" ",$row->time_stamp);
+        $calender = explode("-",$data[0]);
+        $day = $calender[2];
         $data2 = explode(":",$data[1]);
         array_push($dataPoints, array("x"=>  $data2[0], "y"=> $row->Temperature));
     }
@@ -30,7 +32,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Temperature"
+		text: "Temperature day : <?php echo $day;?>"
 	},
 	data: [{
 		type: "line", //change type to bar, line, area, pie, etc  
