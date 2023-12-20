@@ -26,14 +26,19 @@ if(isset($_GET['logoutWarning'])){
     $result = mysqli_query($conn , $sql);
     $info = mysqli_fetch_array($result , MYSQLI_ASSOC);
     ?>
-    <div class="infobox">
-        <h2 class="info">Information</h2>
-        <div class="infoItem">
-            <p class="InfoHead">Username : <span class="infoText"><?php echo $info['username'];?></span></p>
-            <p class="InfoHead">First Name : <span class="infoText"><?php echo $info['fname'];?></span></p>
-            <p class="InfoHead">Last Name : <span class="infoText"><?php echo $info['lname'];?></span></p>
-            <p class="InfoHead">Role : <span class="infoText"><?php echo $info['role'];?></span></p>
-        </div>
+<div class="infobox">
+    <h2 class="info">Information</h2>
+    <div class="infoItem">
+        <p class="InfoHead">Username : <span class="infoText"><?php echo $info['username'];?></span></p>
+        <p class="InfoHead">First Name : <span id="fname" class="infoText"><?php echo $info['fname'];?></span>
+            <button onclick="editField('fname')" class="editBut">Edit</button>
+        </p>
+        <p class="InfoHead">Last Name : <span id="lname" class="infoText"><?php echo $info['lname'];?></span>
+            <button onclick="editField('lname')" class="editBut">Edit</button>
+        </p>
+        <p class="InfoHead">Role : <span class="infoText"><?php echo $info['role'];?></span></p>
+    </div>
+</div>
     </div>
 
 
@@ -88,7 +93,35 @@ if(isset($_POST['submit'])) {
             </form><br>
         </div>
     </div>
+<script>
+function editField(field) {
+    const fieldElement = document.getElementById(field);
+    const currentValue = fieldElement.textContent.trim();
+    const newValue = prompt(`Enter new ${field}:`, currentValue);
 
+    if (newValue !== null && newValue.trim() !== '') {
+        fieldElement.textContent = newValue.trim();
+        updateDatabase(field, newValue.trim());
+    }
+}
+
+function updateDatabase(field, newValue) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log('Database updated');
+            } else {
+                console.error('Error updating database');
+            }
+        }
+    };
+
+    xhr.open('POST', 'update_info.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`field=${field}&value=${newValue}`);
+}
+</script>
 <?php require("footer.php"); ?>
 </body>
 </html>

@@ -76,6 +76,26 @@ div.regisMid {
     text-align: center;
 }
 
+.fa-bars {
+    background-color: #FBFAF8;
+}
+
+.editBut {
+    background-color: #E7DECD;
+    border: none;
+    color: #0A122A;
+    border-radius: 8px;
+}
+
+.editBut:hover {
+    background-color: #e7decd98;
+    box-shadow: #E7DECD 0px 0px 8px;
+}
+
+.editBut:active {
+    background-color: #e7decd;
+}
+
 label {
     font-size: 28px;
     font-weight: 500;
