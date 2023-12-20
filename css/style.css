@@ -87,6 +87,7 @@ input {
     padding: 4px 12px;
     border: solid 1px transparent;
     background-color: #FBFAF8;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 8px;
 }
 
 .halfIn {
