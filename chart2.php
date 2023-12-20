@@ -46,7 +46,7 @@ chart.render();
 </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 50%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
+<div id="chartContainer" style="height: 370px; width: 100%;margin-left:30px;margin-right:30px;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </body>
 </html>                              
