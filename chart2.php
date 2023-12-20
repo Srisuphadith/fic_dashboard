@@ -26,7 +26,6 @@ catch(\PDOException $ex){
 <!DOCTYPE HTML>
 <html>
 <head>  
-    <canvas class="chartContainer" style="width: 500px;"></canvas>
 <script>
 window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
