@@ -4,7 +4,7 @@ $dataPoints = array();
 //Best practice is to create a separate file for handling connection to database
 try{
     require_once("PDO.php");
-    $handle = $link->prepare('SELECT id, Temperature,time_stamp FROM Sensor_data ORDER BY id DESC LIMIT 20'); 
+    $handle = $link->prepare('SELECT id, Temperature,time_stamp FROM Sensor_data ORDER BY id DESC'); 
     $handle->execute(); 
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 		
