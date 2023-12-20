@@ -128,23 +128,38 @@ catch(\PDOException $ex){
 ?>
         <script>
 window.onload = function () {
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart1 = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Temperature day : <?php echo $data[0];?>"
+		text: "Temperature all day : <?php echo $data[0];?>"
 	},
 	data: [{
 		type: "scatter", //change type to bar, line, area, pie, etc  
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
-chart.render();
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Temperature all day : <?php echo $data[0];?>"
+	},
+	data: [{
+		type: "scatter", //change type to bar, line, area, pie, etc  
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart1.render();
+chart2.render();
  
 }
 </script>
-        <div id="chartContainer" style="height: 470px; width: 100%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
+        <div id="chartContainer1" style="height: 470px; width: 100%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
+        <div id="chartContainer2" style="height: 470px; width: 100%;"></div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </div>
     <script>
