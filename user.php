@@ -103,7 +103,8 @@ if(isset($_GET['logoutWarning'])){
         </div>
         <?php
  
-$dataPoints = array();
+$dataPoints1 = array();
+$dataPoints2 = array();
 //Best practice is to create a separate file for handling connection to database
 try{
     require_once("PDO.php");
@@ -111,14 +112,15 @@ try{
     $month_sr = date("m");
     $day_sr = date("d");
     $year_sr = date("Y");
-    $handle = $link->prepare("SELECT id, Temperature,time_stamp FROM Sensor_data WHERE time_stamp LIKE '".$year_sr."-".$month_sr."-".$day_sr."%%%%%%%%%' ORDER BY id DESC"); 
+    $handle = $link->prepare("SELECT id, Temperature,Humidity,time_stamp FROM Sensor_data WHERE time_stamp LIKE '".$year_sr."-".$month_sr."-".$day_sr."%%%%%%%%%' ORDER BY id DESC"); 
     $handle->execute(); 
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
     foreach($result as $row){
         $data = explode(" ",$row->time_stamp);
         $calender = explode("-",$data[0]);
         $data2 = explode(":",$data[1]);
-        array_push($dataPoints, array("x"=>  $data2[0], "y"=> $row->Temperature));
+        array_push($dataPoints1, array("x"=>  $data2[0], "y"=> $row->Temperature));
+        array_push($dataPoints2, array("x"=>  $data2[0], "y"=> $row->Humidity));
     }
 	$link = null;
 }
@@ -137,7 +139,7 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 	},
 	data: [{
 		type: "scatter", //change type to bar, line, area, pie, etc  
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 
@@ -146,7 +148,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Temperature all day : <?php echo $data[0];?>"
+		text: "Humidity all day : <?php echo $data[0];?>"
 	},
 	data: [{
 		type: "scatter", //change type to bar, line, area, pie, etc  
