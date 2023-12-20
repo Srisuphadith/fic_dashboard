@@ -96,11 +96,11 @@ if(isset($_GET['logoutWarning'])){
         </div>
         </div>
         <div class="pastDataAll">
-            <h2 class="pastData">Data from the past 7 days</h2>
-            <div class="pastDataItem" id="past-data">
+            <h2 class="pastData">Data from the past 1 hours</h2>
+            <div class="pastDataItem">
             <?php
 
-                $sevenDaysAgo = date('Y-m-d H:i:s', strtotime('-7 days'));
+                $sevenDaysAgo = date('Y-m-d H:i:s', strtotime('-1 hours'));
                 $sqlPast = "SELECT `Temperature`, `Humidity`, `Soil_humidity`, `time_stamp` FROM `Sensor_data` WHERE `time_stamp` >= '$sevenDaysAgo' ORDER BY `time_stamp` DESC";
                 $pastData = mysqli_query($conn, $sqlPast);
             ?>
@@ -159,53 +159,53 @@ data.forEach(row => {
 
     updatePastData();
 
-    function updateMonitorStatus() {
-        setInterval(function() {
-            fetch('update_status.php')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    let timestamp  = data.time_stamp;
-                    let year = parseInt(timestamp.substring(0, 4));
-                    let month = parseInt(timestamp.substring(5, 7)) - 1;
-                    let day = parseInt(timestamp.substring(8, 10));
-                    let hours = parseInt(timestamp.substring(11, 13));
-                    let minutes = parseInt(timestamp.substring(14, 16));
-                    let seconds = parseInt(timestamp.substring(17, 19));
-                    let DBtime = new Date(year, month, day, hours, minutes, seconds);
-                    let targetDate = new Date(DBtime.getTime() + 10 * 60000);
+    // function updateMonitorStatus() {
+    //     setInterval(function() {
+    //         fetch('update_status.php')
+    //             .then(response => {
+    //                 if (!response.ok) {
+    //                     throw new Error('Network response was not ok');
+    //                 }
+    //                 return response.json();
+    //             })
+    //             .then(data => {
+    //                 let timestamp  = data.time_stamp;
+    //                 let year = parseInt(timestamp.substring(0, 4));
+    //                 let month = parseInt(timestamp.substring(5, 7)) - 1;
+    //                 let day = parseInt(timestamp.substring(8, 10));
+    //                 let hours = parseInt(timestamp.substring(11, 13));
+    //                 let minutes = parseInt(timestamp.substring(14, 16));
+    //                 let seconds = parseInt(timestamp.substring(17, 19));
+    //                 let DBtime = new Date(year, month, day, hours, minutes, seconds);
+    //                 let targetDate = new Date(DBtime.getTime() + 10 * 60000);
 
-                    if(data.Temperature == 0 || data.Humidity == 0 || data.Soil_humidity == 0){
-                        document.querySelector('.dataItem').innerHTML = "<p>Some sensor data is zero.</p>";
-                    } else {
-                        let timeNow = new Date();
-                        console.log(timeNow);
-                        console.log(targetDate);
-                        if(timeNow > targetDate){
-                            document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">The farm is not responsive.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>"
-                        }else{
-                            document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOn\"><p class=\"notiTextOn\"><span class=\"notiInside\">The farm is Online.</span></p><p class=\"notiDes\">All sensors work normally.</p></div>"
-                        }
-                    }
+    //                 if(data.Temperature == 0 || data.Humidity == 0 || data.Soil_humidity == 0){
+    //                     document.querySelector('.dataItem').innerHTML = "<p>Some sensor data is zero.</p>";
+    //                 } else {
+    //                     let timeNow = new Date();
+    //                     console.log(timeNow);
+    //                     console.log(targetDate);
+    //                     if(timeNow > targetDate){
+    //                         document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">The farm is not responsive.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>"
+    //                     }else{
+    //                         document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOn\"><p class=\"notiTextOn\"><span class=\"notiInside\">The farm is Online.</span></p><p class=\"notiDes\">All sensors work normally.</p></div>"
+    //                     }
+    //                 }
 
-                    document.querySelectorAll('span.mornitorStatus')[0].innerHTML = (data.pump == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>";
-                    document.querySelectorAll('span.mornitorStatus')[1].innerHTML = (data.fan == 1) ? "<span class='successAlt'> open </span>" : "<span class='close'> close </span>";
-                    document.querySelectorAll('span.mornitorStatus')[2].innerHTML = "<span class=\"sensorValue\">"+data.Temperature+"</span>";
-                    document.querySelectorAll('span.mornitorStatus')[3].innerHTML = "<span class=\"sensorValue\">"+data.Humidity+"</span>";
-                    document.querySelectorAll('span.mornitorStatus')[4].innerHTML = "<span class=\"sensorValue\">"+data.Soil_humidity+"</span>";
+    //                 document.querySelectorAll('span.mornitorStatus')[0].innerHTML = (data.pump == 1) ? "<span class='open'> open </span>" : "<span class='close'> close </span>";
+    //                 document.querySelectorAll('span.mornitorStatus')[1].innerHTML = (data.fan == 1) ? "<span class='successAlt'> open </span>" : "<span class='close'> close </span>";
+    //                 document.querySelectorAll('span.mornitorStatus')[2].innerHTML = "<span class=\"sensorValue\">"+data.Temperature+"</span>";
+    //                 document.querySelectorAll('span.mornitorStatus')[3].innerHTML = "<span class=\"sensorValue\">"+data.Humidity+"</span>";
+    //                 document.querySelectorAll('span.mornitorStatus')[4].innerHTML = "<span class=\"sensorValue\">"+data.Soil_humidity+"</span>";
                     
-                })
-                .catch(error => {
-                    console.error('Fetch Error:', error);
-                });
-        }, 1000);
-    }
+    //             })
+    //             .catch(error => {
+    //                 console.error('Fetch Error:', error);
+    //             });
+    //     }, 10000);
+    // }
 
-    updateMonitorStatus();
+    // updateMonitorStatus();
 </script>
 <?php require("footer.php"); ?>
 </body>
