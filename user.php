@@ -133,7 +133,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Temperature day : <?php echo $data[0];?>"
+		text: "Temperature all day : <?php echo $data[0];?>"
 	},
 	data: [{
 		type: "scatter", //change type to bar, line, area, pie, etc  
@@ -145,6 +145,7 @@ chart.render();
 }
 </script>
         <div id="chartContainer" style="height: 470px; width: 100%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
+        <div id="chartContainer" style="height: 470px; width: 100%;"></div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </div>
     <script>
