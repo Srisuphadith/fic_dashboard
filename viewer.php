@@ -104,9 +104,7 @@ if(isset($_GET['logoutWarning'])){
                 $sqlPast = "SELECT `Temperature`, `Humidity`, `Soil_humidity`, `time_stamp` FROM `Sensor_data` WHERE (`time_stamp` >= '$sevenDaysAgo')AND(`ID` % 120 = 0) ORDER BY `time_stamp` DESC";
                 $pastData = mysqli_query($conn, $sqlPast);
             ?>
-        <div class="tableWrapper" style="max-height: 200px; overflow-y: auto; width:100%; text-align:center;" >
         <table border="1" class="tableLower" width="90%" align="center">
-            <br>
             <tr>
                 <th>Date</th>
                 <th>Tempetature</th>
