@@ -8,7 +8,7 @@ try{
     $month_sr = date("m");
     $day_sr = date("d");
     $year_sr = date("Y");
-    $handle = $link->prepare("SELECT id, Temperature,time_stamp FROM Sensor_data WHERE time_stamp LIKE '".$year_sr."-".$month_sr."-".$day_sr."%%%%%%%%%' ORDER BY id DESC"); 
+    $handle = $link->prepare("SELECT id, Temperature,time_stamp FROM Sensor_data WHERE time_stamp LIKE '".$year_sr."-".$month_sr."-".19."%%%%%%%%%' ORDER BY id DESC"); 
     $handle->execute(); 
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
     foreach($result as $row){
