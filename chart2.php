@@ -39,7 +39,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		text: "Temperature day : <?php echo $data[0];?>"
 	},
 	data: [{
-		type: "line", //change type to bar, line, area, pie, etc  
+		type: "scatter", //change type to bar, line, area, pie, etc  
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
