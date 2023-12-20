@@ -10,7 +10,7 @@ try{
 		
     foreach($result as $row){
         $data = explode(" ",$row->time_stamp);
-        $data2 = explode("-",$data[1]);
+        $data2 = explode(":",$data[1]);
         array_push($dataPoints, array("x"=>  $data2[0], "y"=> $row->Temperature));
     }
 	$link = null;
