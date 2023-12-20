@@ -36,21 +36,15 @@
 <body>
     <div id="footer">
         <div class="footerCol">
-            <h2 class="head">this is footer1</h2>
+            <h2 class="head">About</h2>
             <div class="footerContent">
-                footer1
+                term & policy
             </div>
         </div>
         <div class="footerCol">
-            <h2 class="head">this is footer2</h2>
+            <h2 class="head">Contact Us</h2>
             <div class="footerContent">
-                footer2
-            </div>
-        </div>
-        <div class="footerCol">
-            <h2 class="head">this is footer3</h2>
-            <div class="footerContent">
-                footer3
+                Bit 6
             </div>
         </div>
     </div>
