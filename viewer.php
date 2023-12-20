@@ -96,17 +96,69 @@ if(isset($_GET['logoutWarning'])){
         </div>
         </div>
         <div class="pastDataAll">
-            <h2 class="pastData">Weather</h2>
-            <div class="pastDataItem">
+            <h2 class="pastData">Data from the past 7 days</h2>
+            <div class="pastDataItem" id="past-data">
+            <?php
 
+                $sevenDaysAgo = date('Y-m-d H:i:s', strtotime('-7 days'));
+                $sqlPast = "SELECT `Temperature`, `Humidity`, `Soil_humidity`, `time_stamp` FROM `Sensor_data` WHERE `time_stamp` >= '$sevenDaysAgo' ORDER BY `time_stamp` DESC";
+                $pastData = mysqli_query($conn, $sqlPast);
+            ?>
+        <table border="1" class="tableLower" width="90%" align="center">
+            <tr>
+                <th>Date</th>
+                <th>Tempetature</th>
+                <th>Air Humidity</th>
+                <th>Soil Humidity</th>
+            </tr>
+            <?php while($pastS = mysqli_fetch_array($pastData)){ ?>
+            <tr>
+                <td class="stm"><?php echo $pastS['time_stamp']; ?></td>
+                <td class="tem"><?php echo $pastS['Temperature']; ?></td>
+                <td class="ahm"><?php echo $pastS['Humidity']; ?></td>
+                <td class="shm"><?php echo $pastS['Soil_humidity']; ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+            
+        </div>
             </div>
         </div>
 
-        </div>
-    </div>
-</div>
-
 <script>
+      function updatePastData() {
+        fetch('get_past_data.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+    const pastDataDiv = document.querySelector('.tableLower');
+    pastDataDiv.innerHTML = `<tr>
+        <th>Date</th>
+        <th>Tempetature</th>
+        <th>Air Humidity</th>
+        <th>Soil Humidity</th>
+    </tr>`;
+data.forEach(row => {
+    pastDataDiv.innerHTML += `
+            <tr>
+                <td class="stm">${row.time_stamp}</td>
+                <td class="tem">${row.Temperature}</td>
+                <td class="ahm">${row.Humidity}</td>
+                <td class="shm">${row.Soil_humidity}</td>
+            </tr>
+        `;
+    });
+}).catch(error => {
+                console.error('Fetch Error:', error);
+            });
+    }
+
+    updatePastData();
+
     function updateMonitorStatus() {
         setInterval(function() {
             fetch('update_status.php')

@@ -261,7 +261,8 @@ a.register {
 .sensor,
 .info,
 .reset,
-.weather {
+.weather,
+.pastData {
     color: #FBFAF8;
     background-color: #804E49;
     padding: 12px 20px;
@@ -272,7 +273,8 @@ a.register {
 .dataItem,
 .infobox,
 .resetbox,
-.weatherItem {
+.weatherItem,
+.pastDataItem {
     border: 1px solid #E7DECD;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -286,7 +288,8 @@ a.register {
 
 .moniItem,
 .infobox,
-.weatherItem {
+.weatherItem,
+.pastDataItem {
     margin-bottom: 40px;
 }
 
@@ -333,7 +336,8 @@ p.InfoHead {
 
 .infoItem,
 .resetItem,
-.weatherItem {
+.weatherItem,
+.pastDataItem {
     padding: 8px 40px;
 }
 
@@ -421,6 +425,12 @@ textarea {
     align-items: center;
     justify-content: center;
     margin: 20px 12px 12px 12px;
+}
+
+.pastDataItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonMid {
