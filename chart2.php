@@ -4,10 +4,13 @@ $dataPoints = array();
 //Best practice is to create a separate file for handling connection to database
 try{
     require_once("PDO.php");
-    $handle = $link->prepare("SELECT id, Temperature,time_stamp FROM Sensor_data WHERE time_stamp LIKE '2023-12-19%%%%%%%%%' ORDER BY id DESC"); 
+
+    $month_sr = date("m");
+    $day_sr = date("d");
+    $year_sr = date("Y");
+    $handle = $link->prepare("SELECT id, Temperature,time_stamp FROM Sensor_data WHERE time_stamp LIKE '".$year_sr."-".$month_sr."-".$day_sr."%%%%%%%%%' ORDER BY id DESC"); 
     $handle->execute(); 
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
-		
     foreach($result as $row){
         $data = explode(" ",$row->time_stamp);
         $calender = explode("-",$data[0]);
