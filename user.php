@@ -152,7 +152,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 	},
 	data: [{
 		type: "scatter", //change type to bar, line, area, pie, etc  
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart1.render();
