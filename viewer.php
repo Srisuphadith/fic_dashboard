@@ -30,38 +30,43 @@ if(isset($_GET['logoutWarning'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            const country = 'Bangkok';
-            const url = "https://api.openweathermap.org/data/2.5/weather?q=" + country + "&appid=5d05d21c66da638fb6162d37694d1a8c&units=metric";
-            
-            $.ajax({
-                dataType: "json",
-                url: url,
-                success: function (response) {
-                    const temp = response["main"]["temp"];
-                    const humi = response["main"]["humidity"];
-                    const description = response["weather"][0]["description"];
-                    const icon = response["weather"][0]["icon"];
-                    const img = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-                    const weatherInfo = `
-                    <div class="weatherShow">
-                        <div class="insideWeather">
-                            <div class="weatherPicText">
-                                <img src="${img}" alt="Weather icon">
-                                <p class=InfoHead>Country : <span class="infoText">Bangkok</span></p>
-                            </div>
-                            <div class="weatherTextAll">
-                                <p class=InfoHead>Temperature: <span class="infoText">${temp}°C</span></p>
-                                <p class=InfoHead>Humidity: <span class="infoText">${humi}%</span></p>
-                                <p class=InfoHead>Description: <span class="infoText">${description}</span></p>
-                            </div>
+    let weatherFetched = false;
+
+    if (!weatherFetched) {
+        const country = 'Bangkok';
+        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + country + "&appid=5d05d21c66da638fb6162d37694d1a8c&units=metric";
+
+        $.ajax({
+            dataType: "json",
+            url: url,
+            success: function (response) {
+                const temp = response["main"]["temp"];
+                const humi = response["main"]["humidity"];
+                const description = response["weather"][0]["description"];
+                const icon = response["weather"][0]["icon"];
+                const img = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+                const weatherInfo = `
+                <div class="weatherShow">
+                    <div class="insideWeather">
+                        <div class="weatherPicText">
+                            <img src="${img}" alt="Weather icon">
+                            <p class=InfoHead>Country : <span class="infoText">Bangkok</span></p>
+                        </div>
+                        <div class="weatherTextAll">
+                            <p class=InfoHead>Temperature: <span class="infoText">${temp}°C</span></p>
+                            <p class=InfoHead>Humidity: <span class="infoText">${humi}%</span></p>
+                            <p class=InfoHead>Description: <span class="infoText">${description}</span></p>
                         </div>
                     </div>
-                    `;
-                    
-                    $('#my-div').html(weatherInfo);
-                }
-            });
+                </div>
+                `;
+
+                $('#my-div').html(weatherInfo);
+                weatherFetched = true;
+            }
         });
+    }
+});
     </script>
     <div class="viewerFlex">
             <div class="moniItem">
@@ -90,6 +95,13 @@ if(isset($_GET['logoutWarning'])){
             </div>
         </div>
         </div>
+        <div class="pastDataAll">
+            <h2 class="pastData">Weather</h2>
+            <div class="pastDataItem">
+
+            </div>
+        </div>
+
         </div>
     </div>
 </div>
