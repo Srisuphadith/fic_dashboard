@@ -144,7 +144,7 @@ chart.render();
  
 }
 </script>
-        <div id="chartContainer" style="height: 370px; width: 50%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div> <!-- ส่วนเเสดงกราฟในhtml -->
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </div>
     <script>
