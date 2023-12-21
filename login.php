@@ -49,25 +49,33 @@
         }
     }
     ?>
-    <div class="loginPage">
-        <div class="loginMid">
-            <h1 class="header">Login</h1>
-            <form action="login.php" method="post">
-                <label for="username">Username</label><br>
-                <input type="text" name="username" placeholder="Enter your username" required><br><br>
-                <label for="pass">Password</label><br>
-                <input type="password" name="pass" placeholder="Enter your password" required>
-                <br><br><br>
-                <div class="button">
-                <button type="submit" name="submit" class="button">Login</button>
-                
-            </div>
-            </form>
-            </div>
+    <div class="signFlex">
+        <div class="signLogo">
+            <div class="logoimg"><img src="image/bit6-logo.png" alt="bit6-logo" class="signLogoimg">
+        <p class="desLogo">Empowering Growth, Nurturing Life Your Trees, Our Technology.</p></div>
+        </div>
+        <div class="sign">
+        <div class="loginPage">
+            <div class="loginMid">
+                <h1 class="header">Sign In</h1>
+                <form action="login.php" method="post">
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" placeholder="Enter your username" required><br><br>
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="pass" placeholder="Enter your password" required>
+                    <br><br><br>
+                    <div class="button">
+                    <button type="submit" name="submit" class="button">Sign In</button>
+                    </div><br><hr><br>
+                    <div class="button">
+                    <a href="register.php" class="linkButt">Sign Up.</a>
+                </div>       
+                </form>
+                </div>
+        </div>
+        <br>
     </div>
-    <br>
-        <div class="footer"><span class="register">Don't have an account yet? </span><a href="register.php" class="register" class="link"> Register here.</a></div>    
-        
+</div>
 </body>
 
 </html>

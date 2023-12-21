@@ -180,11 +180,9 @@ data.forEach(row => {
                     let targetDate = new Date(DBtime.getTime() + 10 * 60000);
 
                     if(data.Temperature == 0 || data.Humidity == 0 || data.Soil_humidity == 0){
-                        document.querySelector('.dataItem').innerHTML = "<p>Some sensor data is zero.</p>";
+                        document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">Some sensor data is zero.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>";
                     } else {
                         let timeNow = new Date();
-                        console.log(timeNow);
-                        console.log(targetDate);
                         if(timeNow > targetDate){
                             document.querySelector('.dataItem').innerHTML = "<div class=\"notiTextAllOff\"><p class=\"notiTextOff\"><i class=\"fas fa-exclamation-circle\"></i><span class=\"notiInside\">The farm is not responsive.</span></p><p class=\"notiDes\">Some sensors malfunction or don't work or the farm crashes.</p></div>"
                         }else{

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="login">
+<body class="login" id="signup">
 <?php
 if(isset($_POST['submit'])) {
     $role = "user";
@@ -60,29 +60,39 @@ if(isset($_POST['submit'])) {
     }
 }
 ?>
-    <div class="loginPage">
-        <div class="regisMid">
-            <h1 class="header">Register</h1>
-            <form action="register.php" method="post">
-                <label for="name">Name</label><br>
-                <div class="name"><input class="halfIn" type="text" name="fname" placeholder="Enter Firstname" required><input class="halfIn" type="text" name="lname" placeholder="Enter Lastname" required></div><br>
-                <label for="username">Username</label><br>
-                <input type="text" name="username" placeholder="Enter your username" required><br><br>
-                <label for="pass">Password</label><br>
-                <input type="password" name="pass" placeholder="Enter your password" required><br><br>
-                <label for="pass">Re-enter Password</label><br>
-                <input type="password" name="c-pass" placeholder="Enter your password" required>
-                <br><br><br>
-                <div class="button">
-                <button type="submit" name="submit" class="button">Submit</button>
-                
-            </div>
-            </form>
-            </div>
+    <div class="signFlex">
+    <div class="signLogo">
+            <div class="logoimg"><img src="image/bit6-logo.png" alt="bit6-logo" class="signLogoimg">
+        <p class="desLogo">Empowering Growth, Nurturing Life Your Trees, Our Technology.</p></div>
+        </div>
+        <div class="sign">
+        <div class="loginPage">
+            
+            <div class="regisMid">
+                <h1 class="header">Sign Up</h1>
+                <form action="register.php" method="post">
+                    <label for="name">Name</label><br>
+                    <div class="name"><input class="halfIn" type="text" name="fname" placeholder="Enter Firstname" required><input class="halfIn" type="text" name="lname" placeholder="Enter Lastname" required></div><br>
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" placeholder="Enter your username" required><br><br>
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="pass" placeholder="Enter your password" required><br><br>
+                    <label for="pass">Re-enter Password</label><br>
+                    <input type="password" name="c-pass" placeholder="Enter your password" required>
+                    <br><br><br>
+                    <div class="button">
+                    <button type="submit" name="submit" class="button">Sign Up</button>
+                    </div><br><hr><br>
+                    <div class="button">
+                    <a href="login.php" class="linkButt">Sign In.</a>
+                </div>       
+                </form>
+                </div>
+        </div>
+        <br>
+            <div class="footer">  By clicking Sign Up, you agree to our Terms and Privacy Policy.  </div>    <br><br>
+        </div>
     </div>
-    <br>
-        <div class="footer"><span class="register">Already have an account? </span><a href="login.php" class="register" class="link"> Login here.</a></div>    
-        
 </body>
 
 </html>
