@@ -12,7 +12,7 @@
     <?php require("nav.php"); ?>
     <div class="lowerContent">
         <h2 class="sensor">Terms and Policies</h2>
-        <div class="sensorItem">
+        <div class="sensorItem" style="margin-bottom:40px;">
         1. Introduction
 1.1 Purpose: <br>
 The Smart Farm Prototype website ("Website") provides users with access to information, data, and tools related to the Smart Farm Prototype project.<br><br>
