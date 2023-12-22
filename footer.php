@@ -38,7 +38,7 @@
         <div class="footerCol">
             <h2 class="head">About</h2>
             <div class="footerContent">
-                term & policy
+                <a href="policy.php" class="policy">term & policy</a>
             </div>
         </div>
         <div class="footerCol">

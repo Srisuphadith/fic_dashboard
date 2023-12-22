@@ -122,6 +122,12 @@
             <a href="<?php echo $_SESSION['role'].'.php'; ?>"><?php echo strtoupper($_SESSION['role']); ?></a>
             <a href="logout.php">LOGOUT</a>
         </div>
+        <?php }elseif(basename($_SERVER['PHP_SELF']) === "policy.php"){ ?>
+            <div class="dropdown-contentTop">
+            <a href="<?php echo $_SESSION['role'].'.php'; ?>"><?php echo strtoupper($_SESSION['role']); ?></a>
+            <a href="account.php">ACCOUNT DETAILS</a>
+            <a href="logout.php">LOGOUT</a>
+            </div>
         <?php }else{ ?>
         <div class="dropdown-contentTop">
             <a href="account.php">ACCOUNT DETAILS</a>

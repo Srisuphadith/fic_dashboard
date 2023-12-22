@@ -172,6 +172,19 @@ input:hover {
     background-color: #FBFAF8;
 }
 
+.policy {
+    color: #FBFAF8;
+    text-decoration: none;
+}
+
+.policy:hover {
+    color: #FBFAF860;
+}
+
+.policy:active {
+    color: #FBFAF8;
+}
+
 input:active {
     border: solid 1px #0A122A;
     background-color: whitesmoke;
