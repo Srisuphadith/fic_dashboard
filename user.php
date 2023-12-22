@@ -120,10 +120,11 @@ try{
         $data = explode(" ",$row->time_stamp);
         $calender = explode("-",$data[0]);
         $data2 = explode(":",$data[1]);
-        if ($data2[0] >= 7)
+        if ($data2[0] >= 7){
         array_push($dataPoints1, array("x"=>  $data2[0], "y"=> $row->Temperature));
         array_push($dataPoints2, array("x"=>  $data2[0], "y"=> $row->Humidity));
         array_push($dataPoints3, array("x"=>  $data2[0], "y"=> $row->Soil_humidity));
+        }
     }
 	$link = null;
 }
