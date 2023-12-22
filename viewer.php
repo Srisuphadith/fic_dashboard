@@ -90,7 +90,7 @@ if(isset($_GET['logoutWarning'])){
             </div>
 
         <div class="viewerRight">
-            <h2 class="noti">Receive Notification</h2>
+            <h2 class="noti">Controller Status</h2>
             <div class="dataItem">
             </div>
         </div>
