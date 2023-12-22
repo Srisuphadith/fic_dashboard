@@ -44,7 +44,7 @@
         <div class="footerCol">
             <h2 class="head">Contact Us</h2>
             <div class="footerContent">
-            <a herf="mailto:Bit6-CPE101@kmutt.ac.th">Bit6-CPE101@kmutt.ac.th</a>
+            <a href="mailto:Bit6-CPE101@kmutt.ac.th">Bit6-CPE101@kmutt.ac.th</a>
             </div>
         </div>
     </div>
