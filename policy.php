@@ -92,7 +92,7 @@ The Smart Farm Prototype project may update these terms and policies at any time
 21 Governing Law<br>
 These terms and policies are governed by and construed in accordance with the laws of Thailand, and any disputes will be subject to the exclusive jurisdiction of the courts in that jurisdiction.<br><br><br>
 22 Contact Information<br>
-For inquiries or concerns regarding these terms and policies, please contact Bit6-CPE101@kmutt.ac.th.<br><br><br>
+For inquiries or concerns regarding these terms and policies, please contact <a herf="Bit6-CPE101@kmutt.ac.th">Bit6-CPE101@kmutt.ac.th</a><br><br><br>
 
         </div>
     </div>
