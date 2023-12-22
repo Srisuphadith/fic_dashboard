@@ -527,3 +527,15 @@ tr {
     padding: 0px;
     margin: 0px;
 }
+.bit6p {
+    color: #000000;
+    text-decoration: none;
+}
+
+.bit6p:hover {
+    color: #00000060;
+}
+
+.bit6p:active {
+    color: #000000;
+}
